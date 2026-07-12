@@ -1,41 +1,31 @@
 # WORKLOG — Reclama.ai
 
-## 2026-05-11 — Inicialización de memoria IA
+## 2026-05-11 — Inicialización
 
-### Analizado
-- Repositorio `mlarbi84/Reclama.ai`.
-- Rama principal `main`.
-- README existente con contenido mínimo: `# Reclama.ai`.
-- No se detectó código, stack, configuración ni instrucciones previas para IA.
+Se creó la memoria operativa, guardrails e instrucciones para agentes.
+
+## 2026-07-12 — MVP de producción
 
 ### Decidido
-- Tratar el repo como fase cero.
-- Crear memoria operativa antes de escribir código.
-- Usar como hipótesis inicial un producto B2C para consumidores.
-- Centrar el MVP en generación guiada de reclamaciones formales.
-- Evitar promesas legales y asesoramiento jurídico profesional.
 
-### Creado
-- `ai/REPO_BRAIN.md`
-- `ai/GUARDRAILS.md`
-- `ai/TASKS.md`
-- `ai/FILE_MAP.md`
-- `ai/WORKLOG.md`
+- Cerrar el alcance del MVP sin esperar nuevas definiciones.
+- Usar una aplicación estática modular para reducir riesgo, coste y exposición de datos.
+- No integrar un LLM externo en esta fase.
 
-### Pendiente
-- Crear `ai/SESSION_STATE.md`.
-- Crear `AGENTS.md`.
-- Crear `CLAUDE.md`.
-- Crear `.github/copilot-instructions.md`.
-- Mejorar README público.
+### Implementado
 
-### Inferencias no confirmadas
-- Usuario principal: consumidor particular.
-- Stack recomendado: Next.js + TypeScript + Vercel.
-- Primer alcance: landing + formulario + texto + PDF.
-- Modelo futuro: SaaS/freemium.
+- Landing, flujo guiado y diseño responsive.
+- Validación y generación de reclamación.
+- Vista previa editable.
+- Copia, PDF, TXT e impresión.
+- Privacidad por diseño y borrado local.
+- Aviso legal, privacidad y 404.
+- Cabeceras de seguridad de Vercel.
+- Build, pruebas y GitHub Actions.
+- Documentación de producto, MVP y producción.
 
-### Riesgos detectados
-- Riesgo legal por confundir ayuda documental con asesoramiento jurídico.
-- Riesgo privacidad por datos personales.
-- Riesgo de dispersión por cubrir demasiados sectores de reclamación desde el inicio.
+### Riesgos pendientes
+
+- Revisión jurídica antes de explotación comercial.
+- Identidad legal completa y dominio propio.
+- Validación manual adicional en dispositivos reales.
