@@ -1,0 +1,17 @@
+{
+  "name": "Reclama.ai",
+  "short_name": "Reclama.ai",
+  "description": "Prepara una reclamación clara, privada y revisable.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f7f2",
+  "theme_color": "#0b1f1a",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
