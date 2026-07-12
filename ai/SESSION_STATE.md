@@ -2,16 +2,18 @@
 
 ## Estado
 
-MVP funcional completado y preparado para despliegue en Vercel.
+MVP conversacional funcional y preparado para producción en Vercel.
 
 ## Decisiones vigentes
 
 - Producto inicial para consumidores en España.
-- Aplicación estática sin backend.
-- Generación local determinista.
+- Relato libre como puerta de entrada principal.
+- Máximo tres preguntas de aclaración, todas saltables.
+- Generación temprana sin exigir identidad.
+- Extracción y generación local determinista.
 - Sin persistencia, tracking ni servicios externos.
 - Exportación PDF/TXT local.
 
 ## Próximo paso
 
-Validar el despliegue público, realizar una prueba manual completa en móvil y completar los datos legales y dominio antes de explotación comercial.
+Validar con usuarios reales si el relato libre reduce el abandono y estudiar los errores de extracción antes de decidir si aporta valor integrar un LLM externo opcional.
