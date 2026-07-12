@@ -1,46 +1,79 @@
 # Reclama.ai
 
-Reclama.ai es un proyecto en fase inicial para construir una herramienta que ayude a consumidores a preparar reclamaciones formales de forma guiada, clara y revisable.
+Aplicación web privada y guiada para ayudar a consumidores a preparar reclamaciones formales claras, editables y exportables.
 
-## Visión
+## Estado
 
-Muchas personas no reclaman porque no saben cómo ordenar los hechos, qué tono usar, qué datos incluir o cómo convertir una incidencia en un texto formal.
+MVP funcional listo para despliegue estático en Vercel. No requiere backend, base de datos, claves ni servicios externos.
 
-Reclama.ai busca reducir esa fricción: guiar al usuario, estructurar su caso y generar un borrador de reclamación que pueda revisar, copiar o exportar.
+## Funcionalidades
 
-## Qué pretende hacer
+- Landing responsive y accesible.
+- Formulario guiado en cinco pasos.
+- Categorías de telecomunicaciones, compras, viajes, banca/seguros, suministros y otros.
+- Validación de fechas, importes y campos mínimos.
+- Generación determinista del borrador en el navegador.
+- Vista previa completamente editable.
+- Copia al portapapeles.
+- Descarga directa en PDF y TXT.
+- Impresión / guardado mediante el diálogo del navegador.
+- Borrado inmediato del contenido y ausencia de persistencia.
+- Páginas de privacidad, aviso legal y error 404.
+- Cabeceras de seguridad para Vercel.
+- Pruebas automáticas y CI sin dependencias externas.
 
-- Guiar al usuario paso a paso.
-- Ordenar hechos, fechas, importes y pruebas.
-- Generar una reclamación formal y educada.
-- Permitir editar el resultado antes de usarlo.
-- Exportar o copiar el texto generado.
-- Recordar al usuario que revise todo antes de enviarlo.
+## Ejecutar en local
 
-## Qué no es
+```bash
+python3 -m http.server 8080
+```
 
-Reclama.ai no es un abogado, no sustituye asesoramiento jurídico profesional y no garantiza el éxito de ninguna reclamación.
+Abrir `http://localhost:8080`.
 
-## Estado del proyecto
+## Validar
 
-El repositorio está en fase cero. Actualmente se está construyendo la memoria operativa del proyecto y las instrucciones para que futuras IAs puedan trabajar con contexto estable.
+```bash
+npm run ci
+```
 
-## Documentación interna para IA
+El proyecto usa únicamente APIs estándar del navegador y Node.js. `npm ci` no descarga dependencias porque no existen dependencias de producción ni desarrollo.
 
-- `AGENTS.md`
-- `CLAUDE.md`
-- `.github/copilot-instructions.md`
-- `ai/REPO_BRAIN.md`
-- `ai/GUARDRAILS.md`
-- `ai/TASKS.md`
-- `ai/FILE_MAP.md`
-- `ai/WORKLOG.md`
-- `ai/SESSION_STATE.md`
+## Construir
 
-## Próximo paso
+```bash
+npm run build
+```
 
-Definir el MVP y crear la primera versión funcional: landing, formulario guiado, generación de borrador, vista previa editable y exportación básica.
+Genera el sitio publicable en `dist/`.
 
-## Aviso
+## Desplegar en Vercel
 
-Todo el contenido generado por Reclama.ai debe ser revisado por el usuario antes de ser utilizado. En casos complejos, sensibles o de impacto económico relevante, conviene consultar con un profesional o entidad competente.
+El repositorio incluye `vercel.json`. Al importarlo en Vercel:
+
+- Build command: `npm run build`
+- Output directory: `dist`
+- Node.js: 22 o superior
+
+Cada PR puede generar una preview y la rama `main` debe quedar asociada a producción.
+
+## Arquitectura
+
+```text
+index.html                 landing + flujo completo
+styles.css                 sistema visual y responsive
+js/app.js                  interacción y estado en memoria
+js/validation.js           validación y limpieza
+js/claim.js                generación del documento
+js/pdf.js                  generación local del PDF
+tests/                     pruebas con node:test
+scripts/                   checks y build estático
+docs/                      producto, MVP, legal y operación
+```
+
+## Privacidad
+
+El contenido de la reclamación no se transmite al servidor. No existe login, historial, analítica ni persistencia. El PDF se construye localmente.
+
+## Alcance legal
+
+Reclama.ai ayuda a redactar un borrador. No sustituye asesoramiento jurídico, no representa al usuario y no garantiza el resultado. Antes de una explotación comercial deben completarse los datos identificativos del titular y realizarse una revisión jurídica.

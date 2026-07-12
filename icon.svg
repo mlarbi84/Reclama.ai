@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Reclama.ai">
+  <rect width="64" height="64" rx="16" fill="#0b1f1a"/>
+  <path d="M18 17h22c4.4 0 8 3.6 8 8v12c0 4.4-3.6 8-8 8H29l-11 8v-8c-3.3 0-6-2.7-6-6V23c0-3.3 2.7-6 6-6Z" fill="#d8ff73"/>
+  <path d="M23 27h14M23 34h10" stroke="#0b1f1a" stroke-width="4" stroke-linecap="round"/>
+</svg>

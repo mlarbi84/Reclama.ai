@@ -1,7 +1,8 @@
 # AGENTS — Reclama.ai
 
 ## Antes de trabajar
-Toda IA que entre en este repo debe leer, en este orden:
+
+Lee, en este orden:
 
 1. `ai/REPO_BRAIN.md`
 2. `ai/GUARDRAILS.md`
@@ -10,39 +11,27 @@ Toda IA que entre en este repo debe leer, en este orden:
 5. `ai/SESSION_STATE.md`
 6. `ai/WORKLOG.md`
 
-Después debe resumir:
-- Qué entiende del proyecto.
-- Qué va a modificar.
-- Qué riesgo puede tener el cambio.
+Después resume qué entiendes, qué modificarás y el riesgo del cambio.
 
-## Naturaleza del proyecto
-Reclama.ai está en fase inicial. El objetivo asumido es crear una herramienta web para ayudar a consumidores a preparar reclamaciones formales.
+## Naturaleza
 
-No hay todavía aplicación funcional ni stack confirmado.
+Reclama.ai es una aplicación web B2C para preparar borradores de reclamaciones de consumo. El MVP es estático y procesa todo localmente.
 
 ## Guardrail principal
-No presentar Reclama.ai como abogado, asesor jurídico ni garantía de éxito. Es una ayuda orientativa para redactar reclamaciones revisables por el usuario.
 
-## Reglas de trabajo
-- No tocar `.git/`, secretos ni archivos generados pesados.
-- No introducir dependencias sin justificar.
-- No crear backend ni persistencia de datos personales sin revisar privacidad.
-- No usar datos personales reales en ejemplos.
-- No prometer funcionalidades que no existan.
-- Marcar inferencias como `[INFERIDO]`.
-- Marcar lagunas como `[PENDIENTE DE CONFIRMAR]`.
+No presentar el producto como abogado, asesor jurídico, representante ni garantía de éxito.
 
-## Al modificar
-- Mantén cambios pequeños y trazables.
-- Actualiza `ai/WORKLOG.md`.
-- Actualiza `ai/TASKS.md` si cambia el backlog.
-- Actualiza `ai/SESSION_STATE.md` con el siguiente paso.
-- Si cambia la estructura, actualiza `ai/FILE_MAP.md`.
+## Reglas
 
-## Validación mínima futura
-Cuando exista app:
-- Debe arrancar localmente.
-- Debe generar una reclamación editable.
-- Debe mostrar aviso legal.
-- No debe almacenar datos personales salvo decisión explícita.
-- Debe tener casos de prueba ficticios.
+- No introducir backend, persistencia o envío a terceros sin decisión de privacidad explícita.
+- No registrar datos personales.
+- No usar ejemplos reales.
+- No añadir dependencias sin justificar.
+- Mantener la generación editable y el aviso legal visible.
+- Actualizar `ai/WORKLOG.md`, `ai/TASKS.md`, `ai/SESSION_STATE.md` y `ai/FILE_MAP.md` cuando corresponda.
+
+## Validación mínima
+
+```bash
+npm run ci
+```
