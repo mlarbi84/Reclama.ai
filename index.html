@@ -1,31 +1,155 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Prepara una reclamación formal, clara y revisable sin registrarte ni enviar tus datos a terceros.">
-  <meta name="theme-color" content="#0b1f1a"><meta name="robots" content="index,follow">
-  <meta property="og:title" content="Reclama.ai — Tu reclamación, clara y bien ordenada"><meta property="og:description" content="Un generador privado y guiado para preparar reclamaciones de consumo."><meta property="og:type" content="website">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="manifest" href="/manifest.webmanifest"><link rel="stylesheet" href="/styles.css">
-  <title>Reclama.ai — Prepara tu reclamación</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cuenta qué ha pasado y prepara una reclamación formal sin formularios largos, sin registrarte y sin enviar tus datos a terceros.">
+  <meta name="theme-color" content="#0b1f1a">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Reclama.ai — Cuéntalo. Nosotros lo ordenamos.">
+  <meta property="og:description" content="Un asistente privado que convierte tu relato en una reclamación formal y editable.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/assistant.css">
+  <title>Reclama.ai — Cuéntanos qué ha pasado</title>
 </head>
 <body>
-<a class="skip-link" href="#main">Saltar al contenido</a>
-<header class="site-header"><div class="header-inner"><a class="brand" href="/" aria-label="Reclama.ai, inicio"><span class="brand-mark" aria-hidden="true">R</span><span>reclama.ai</span></a><nav class="nav" aria-label="Navegación principal"><a href="#como-funciona">Cómo funciona</a><a href="/privacidad">Privacidad</a><a class="btn btn-primary btn-small" href="#crear" data-scroll-to-app>Crear reclamación</a></nav></div></header>
-<main id="main">
-<section class="hero"><div class="container hero-grid"><div><span class="eyebrow">Privado · Sin registro · Revisable</span><h1>Reclamar no debería ser <span>tan difícil.</span></h1><p class="hero-copy">Ordena lo ocurrido, explica qué solución necesitas y genera una reclamación formal lista para revisar, descargar y enviar.</p><div class="hero-actions"><a class="btn btn-accent" href="#crear" data-scroll-to-app>Preparar mi reclamación <span aria-hidden="true">→</span></a><a class="btn btn-secondary" href="#como-funciona">Ver cómo funciona</a></div><ul class="trust-line" aria-label="Ventajas"><li>Tus datos no salen del navegador</li><li>Texto totalmente editable</li><li>Descarga en PDF y TXT</li></ul></div><div class="hero-visual" aria-hidden="true"><div class="paper-card"><div class="paper-top"><span class="paper-company">A la atención de la empresa</span><span class="paper-pill">Borrador</span></div><div class="paper-title">ASUNTO: Reclamación formal</div><div class="paper-lines"><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="paper-highlight">Solicito una respuesta por escrito y una solución concreta a la incidencia.</div></div></div></div></section>
-<section class="features" id="como-funciona"><div class="container"><div class="section-heading"><h2>Del problema al documento, sin rodeos.</h2><p>El formulario te ayuda a separar hechos, pruebas y petición para que el resultado sea claro y útil.</p></div><div class="feature-grid"><article class="feature-card"><div class="feature-icon">1</div><h3>Explica qué pasó</h3><p>Te pedimos solo la información necesaria, sin DNI ni datos sensibles innecesarios.</p></article><article class="feature-card"><div class="feature-icon">2</div><h3>Revisa el borrador</h3><p>Se genera en tu dispositivo y puedes cambiar cada palabra antes de usarla.</p></article><article class="feature-card"><div class="feature-icon">3</div><h3>Descarga y envía</h3><p>Copia el texto, descarga un PDF o imprime. Tú decides cómo presentarla.</p></article></div></div></section>
-<section class="app-section" id="crear" tabindex="-1" aria-labelledby="app-title"><div class="container"><div class="app-shell">
-<aside class="app-sidebar"><h2 id="app-title">Tu reclamación</h2><p>Completa cinco pasos breves. No guardamos el contenido.</p><ol class="progress-list" aria-label="Progreso"><li class="progress-item is-active" data-progress-step="1"><span class="progress-number">1</span><span>Tipo</span></li><li class="progress-item" data-progress-step="2"><span class="progress-number">2</span><span>Incidencia</span></li><li class="progress-item" data-progress-step="3"><span class="progress-number">3</span><span>Hechos</span></li><li class="progress-item" data-progress-step="4"><span class="progress-number">4</span><span>Petición</span></li><li class="progress-item" data-progress-step="5"><span class="progress-number">5</span><span>Revisión</span></li></ol><div class="privacy-badge"><strong>Privacidad por diseño</strong>El formulario funciona localmente. Al recargar o empezar de nuevo, los datos desaparecen.</div></aside>
-<div class="app-main"><div id="error-summary" class="error-summary" role="alert" tabindex="-1" hidden></div><form id="claim-form" novalidate>
-<section class="step-panel" data-step-panel="1"><p class="step-kicker">Paso 1 de 5</p><h2 class="step-title">¿Sobre qué quieres reclamar?</h2><p class="step-copy">Selecciona la categoría más cercana. Solo adapta el lenguaje del borrador.</p><div class="category-grid" id="category-grid" role="group" aria-label="Tipo de reclamación"></div><p class="field-error" data-error-for="category" aria-live="polite"></p></section>
-<section class="step-panel" data-step-panel="2" hidden><p class="step-kicker">Paso 2 de 5</p><h2 class="step-title">Identifica la incidencia</h2><p class="step-copy">Incluye datos útiles para localizar el caso y evita información innecesaria.</p><div class="form-grid"><div class="field"><label class="required" for="company">Empresa o entidad</label><input class="input" id="company" name="company" maxlength="120" autocomplete="organization"><p class="field-error" data-error-for="company"></p></div><div class="field"><label class="required" for="subject">Motivo breve</label><input class="input" id="subject" name="subject" maxlength="160" placeholder="Ej. cobro después de solicitar la baja"><p class="field-error" data-error-for="subject"></p></div><div class="field"><label class="required" for="incidentDate">Fecha principal</label><input class="input" type="date" id="incidentDate" name="incidentDate"><p class="field-error" data-error-for="incidentDate"></p></div><div class="field"><label for="reference">N.º de pedido, contrato o expediente</label><input class="input" id="reference" name="reference" maxlength="100"><p class="field-error" data-error-for="reference"></p></div><div class="field"><label for="amount">Importe relacionado (€)</label><input class="input" id="amount" name="amount" inputmode="decimal" placeholder="0,00"><p class="field-error" data-error-for="amount"></p></div></div></section>
-<section class="step-panel" data-step-panel="3" hidden><p class="step-kicker">Paso 3 de 5</p><h2 class="step-title">Cuenta los hechos</h2><p class="step-copy">Sé cronológico y concreto. Evita acusaciones que no puedas demostrar.</p><div class="form-grid"><div class="field field-full"><label class="required" for="facts">¿Qué ocurrió?</label><textarea class="textarea" id="facts" name="facts" maxlength="3000" placeholder="Explica qué contrataste, qué debía ocurrir y qué pasó finalmente."></textarea><div class="field-meta"><span>Mínimo 40 caracteres</span><span data-counter-for="facts">0/3000</span></div><p class="field-error" data-error-for="facts"></p></div><div class="field field-full"><label for="previousActions">¿Qué has hecho ya para solucionarlo?</label><textarea class="textarea" id="previousActions" name="previousActions" maxlength="1500" placeholder="Llamadas, correos, visitas, números de incidencia..."></textarea><div class="field-meta"><span>Opcional</span><span data-counter-for="previousActions">0/1500</span></div><p class="field-error" data-error-for="previousActions"></p></div><div class="field field-full"><label for="evidence">Pruebas o documentos disponibles</label><textarea class="textarea" id="evidence" name="evidence" maxlength="1200" placeholder="Factura, capturas, contrato, justificante de pago..."></textarea><div class="field-meta"><span>Solo enuméralos</span><span data-counter-for="evidence">0/1200</span></div><p class="field-error" data-error-for="evidence"></p></div></div></section>
-<section class="step-panel" data-step-panel="4" hidden><p class="step-kicker">Paso 4 de 5</p><h2 class="step-title">Define qué solución pides</h2><p class="step-copy">Una petición concreta facilita que la empresa entienda qué debe resolver.</p><div class="form-grid"><div class="field field-full"><label class="required" for="request">Solución solicitada</label><textarea class="textarea" id="request" name="request" maxlength="1500" placeholder="Ej. devolución de 49,90 €, cancelación del cargo y confirmación escrita."></textarea><div class="field-meta"><span>Mínimo 15 caracteres</span><span data-counter-for="request">0/1500</span></div><p class="field-error" data-error-for="request"></p></div><div class="field"><label for="responseDays">Plazo que quieres solicitar (días)</label><input class="input" id="responseDays" name="responseDays" type="number" min="1" max="365" inputmode="numeric"><span class="field-help">Es una petición tuya, no un plazo legal calculado.</span><p class="field-error" data-error-for="responseDays"></p></div><div class="field"><label class="required" for="fullName">Nombre y apellidos</label><input class="input" id="fullName" name="fullName" maxlength="120" autocomplete="name"><p class="field-error" data-error-for="fullName"></p></div><div class="field"><label for="email">Correo de contacto</label><input class="input" id="email" name="email" type="email" maxlength="160" autocomplete="email"><p class="field-error" data-error-for="email"></p></div><div class="field"><label for="location">Localidad</label><input class="input" id="location" name="location" maxlength="100" autocomplete="address-level2"><p class="field-error" data-error-for="location"></p></div><div class="field"><label class="required" for="documentDate">Fecha del documento</label><input class="input" id="documentDate" name="documentDate" type="date"><p class="field-error" data-error-for="documentDate"></p></div></div></section>
-<section class="step-panel" data-step-panel="5" hidden><p class="step-kicker">Paso 5 de 5</p><h2 class="step-title">Revisa antes de usarla</h2><p class="step-copy">Edita libremente el texto. Reclama.ai no comprueba contratos, plazos ni hechos externos.</p><div class="preview-grid"><div class="preview-paper"><div class="preview-toolbar"><span>Borrador editable</span><button class="btn btn-secondary btn-small" id="copy-button" type="button">Copiar texto</button></div><label class="sr-only" for="claim-preview">Texto de la reclamación</label><textarea class="preview-textarea" id="claim-preview" spellcheck="true"></textarea></div><aside class="preview-aside"><div class="check-card"><h3>Antes de exportar</h3><ul class="check-list"><li>Comprueba fechas, importes y referencias.</li><li>Adjunta las pruebas mencionadas.</li><li>Guarda justificante del envío.</li></ul><label class="checkbox-row"><input id="review-confirmation" type="checkbox"><span>He revisado el contenido y entiendo que es un borrador orientativo.</span></label></div><div class="export-card"><h3>Exportar</h3><div class="export-buttons"><button class="btn btn-primary" id="pdf-button" data-export type="button">Descargar PDF</button><button class="btn btn-secondary" id="text-button" data-export type="button">Descargar TXT</button><button class="btn btn-secondary" id="print-button" data-export type="button">Imprimir / guardar PDF</button><button class="btn btn-danger" id="reset-button" type="button">Empezar de nuevo</button></div></div></aside></div><div class="notice"><strong>Importante:</strong> esta herramienta ayuda a redactar. No es un abogado, no ofrece representación ni garantiza el resultado. Para casos complejos, consulta con una OMIC, asociación de consumidores o profesional.</div></section>
-<div class="form-actions" aria-label="Controles del formulario"><button class="btn btn-ghost" id="previous-button" type="button">Atrás</button><div class="form-actions-right"><button class="btn btn-primary" id="next-button" type="submit">Continuar</button></div></div>
-</form></div></div></div></section>
-<section class="faq"><div class="container"><div class="section-heading"><h2>Preguntas frecuentes</h2></div><div class="faq-list"><details><summary>¿Guardáis mis datos?</summary><p>No. El formulario se procesa en tu navegador y no existe cuenta, historial ni base de datos. El alojamiento no recibe lo que escribes.</p></details><details><summary>¿La reclamación tiene validez legal?</summary><p>Es un borrador. La validez y el canal adecuado dependen del caso y de la normativa aplicable.</p></details><details><summary>¿Puedo modificar el resultado?</summary><p>Sí. La vista previa es completamente editable antes de copiar, imprimir o descargar.</p></details></div></div></section>
-</main>
-<footer class="site-footer"><div class="container footer-inner"><span>© 2026 Reclama.ai · Versión beta pública</span><nav class="footer-links" aria-label="Enlaces legales"><a href="/privacidad">Privacidad</a><a href="/aviso-legal">Aviso legal</a><a href="https://github.com/mlarbi84/Reclama.ai" rel="noreferrer">Código fuente</a></nav></div></footer>
-<div id="status-toast" class="status-toast" role="status" aria-live="polite"></div><pre id="print-output" aria-hidden="true"></pre><noscript><p>Necesitas activar JavaScript. Tus datos se procesan únicamente en el navegador.</p></noscript><script type="module" src="/js/app.js"></script>
-</body></html>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="Reclama.ai, inicio"><span class="brand-mark" aria-hidden="true">R</span><span>reclama.ai</span></a>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="/privacidad">Privacidad</a>
+        <a class="btn btn-primary btn-small" href="#crear" data-scroll-to-app>Contar mi caso</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Privado · Conversacional · Sin registro</span>
+          <h1>Cuéntalo como te salga. <span>Nosotros lo ordenamos.</span></h1>
+          <p class="hero-copy">No necesitas saber qué datos hacen falta ni usar lenguaje formal. Explica lo ocurrido como se lo contarías a otra persona y obtén un borrador listo para revisar.</p>
+          <div class="hero-actions">
+            <a class="btn btn-accent" href="#crear" data-scroll-to-app>Contar qué ha pasado <span aria-hidden="true">→</span></a>
+            <a class="btn btn-secondary" href="#como-funciona">Ver cómo funciona</a>
+          </div>
+          <ul class="trust-line" aria-label="Ventajas">
+            <li>Una sola explicación inicial</li>
+            <li>Máximo tres preguntas</li>
+            <li>Tus datos no salen del navegador</li>
+          </ul>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="conversation-preview">
+            <div class="mini-message mini-assistant">Cuéntame qué ha pasado. No hace falta que lo ordenes.</div>
+            <div class="mini-message mini-user">Pedí la baja a Movistar y me han vuelto a cobrar 49,90 €...</div>
+            <div class="mini-message mini-assistant"><strong>He entendido:</strong><br>Movistar · Cobro tras la baja · 49,90 €</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="como-funciona">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Del enfado al documento, sin rellenar un expediente.</h2>
+          <p>El asistente identifica los datos útiles, pregunta solo lo imprescindible y deja todo corregible antes de descargarlo.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card"><div class="feature-icon">1</div><h3>Cuéntalo con tus palabras</h3><p>Escribe qué ocurrió con tus palabras. No tienes que elegir categoría ni separar fechas, importes o pruebas.</p></article>
+          <article class="feature-card"><div class="feature-icon">2</div><h3>Aclaramos lo mínimo</h3><p>Si falta algo importante, te hacemos como máximo tres preguntas que puedes saltar.</p></article>
+          <article class="feature-card"><div class="feature-icon">3</div><h3>Revisa el borrador</h3><p>Corrige los datos detectados, edita el texto y descárgalo en PDF o TXT.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-section" id="crear" tabindex="-1" aria-labelledby="app-title">
+      <div class="container">
+        <div class="app-shell assistant-shell">
+          <aside class="app-sidebar">
+            <h2 id="app-title">Tu caso, contado fácil</h2>
+            <p>El asistente transforma tu explicación en un borrador formal sin guardar el contenido.</p>
+            <ol class="progress-list assistant-progress" aria-label="Progreso">
+              <li class="progress-item is-active" data-progress-phase="story"><span class="progress-number">1</span><span>Cuéntamelo</span></li>
+              <li class="progress-item" data-progress-phase="clarify"><span class="progress-number">2</span><span>Aclaramos</span></li>
+              <li class="progress-item" data-progress-phase="review"><span class="progress-number">3</span><span>Revisas</span></li>
+            </ol>
+            <div class="privacy-badge"><strong>Privacidad por diseño</strong>El análisis se realiza en este dispositivo. No hay cuenta, historial, analítica ni envío a un modelo externo.</div>
+          </aside>
+
+          <div class="app-main assistant-main">
+            <div id="chat-log" class="chat-log" aria-live="polite" aria-label="Conversación con el asistente">
+              <article class="chat-message assistant-message">
+                <div class="chat-avatar" aria-hidden="true">R</div>
+                <div class="chat-bubble"><strong>Cuéntame qué ha pasado.</strong><p>No hace falta que lo ordenes ni que uses palabras formales. Incluye lo que recuerdes: empresa, fecha, importe, qué hiciste y qué solución esperas.</p></div>
+              </article>
+            </div>
+
+            <form id="story-form" class="composer-panel">
+              <label class="sr-only" for="story-input">Explica qué ha pasado</label>
+              <textarea id="story-input" class="story-input" maxlength="4000" rows="6" placeholder="Ejemplo: Pedí la baja de internet a Movistar hace dos semanas. Me confirmaron que estaba tramitada, pero ayer me cobraron otra factura de 49,90 €. Ya he llamado dos veces y quiero que me devuelvan el dinero y confirmen la baja."></textarea>
+              <p id="story-error" class="field-error" aria-live="polite"></p>
+              <div class="composer-footer">
+                <div class="composer-help"><span>No incluyas contraseñas, tarjetas completas ni datos innecesarios.</span></div>
+                <button class="btn btn-primary" type="submit">Analizar mi caso <span aria-hidden="true">→</span></button>
+              </div>
+            </form>
+
+            <form id="followup-form" class="followup-panel" hidden>
+              <div id="followup-field"></div>
+              <p id="followup-error" class="field-error" aria-live="polite"></p>
+              <div class="followup-actions">
+                <button class="btn btn-ghost" id="skip-question" type="button">No lo sé / completar después</button>
+                <button class="btn btn-primary" type="submit">Responder</button>
+              </div>
+            </form>
+
+            <section id="review-panel" class="review-panel" hidden aria-labelledby="review-title">
+              <div class="review-heading"><div><p class="step-kicker">Borrador generado</p><h2 class="step-title" id="review-title">Ya tienes una reclamación para revisar</h2><p class="step-copy">Los textos entre corchetes indican datos que conviene completar antes de enviarla.</p></div><button class="btn btn-ghost btn-small" id="reset-button" type="button">Empezar de nuevo</button></div>
+              <div class="preview-grid">
+                <div class="preview-paper">
+                  <div class="preview-toolbar"><span>Documento editable</span><span>Se guarda solo al descargar</span></div>
+                  <textarea id="claim-preview" class="preview-textarea" aria-label="Texto editable de la reclamación"></textarea>
+                </div>
+                <aside class="preview-aside">
+                  <details class="detected-card" open>
+                    <summary>Datos detectados</summary>
+                    <div class="compact-fields">
+                      <label>Empresa<input class="input" name="company" data-detail-field></label>
+                      <label>Motivo<input class="input" name="subject" data-detail-field></label>
+                      <label>Fecha<input class="input" type="date" name="incidentDate" data-detail-field></label>
+                      <label>Importe (€)<input class="input" name="amount" inputmode="decimal" data-detail-field></label>
+                      <label>Referencia<input class="input" name="reference" data-detail-field></label>
+                      <label>Qué solicitas<textarea class="textarea compact-textarea" name="request" data-detail-field></textarea></label>
+                      <label>Nombre y apellidos<input class="input" name="fullName" autocomplete="name" data-detail-field></label>
+                      <label>Correo opcional<input class="input" type="email" name="email" autocomplete="email" data-detail-field></label>
+                      <label>Localidad opcional<input class="input" name="location" autocomplete="address-level2" data-detail-field></label>
+                    </div>
+                    <button class="btn btn-secondary btn-small full-button" id="update-draft-button" type="button">Actualizar borrador</button>
+                  </details>
+                  <div class="check-card"><h3>Antes de descargar</h3><ul class="check-list"><li>Comprueba fechas e importes.</li><li>Completa los campos entre corchetes.</li><li>Adjunta las pruebas por separado.</li></ul><label class="checkbox-row"><input id="review-confirmation" type="checkbox"><span>He revisado el contenido y entiendo que es un borrador orientativo.</span></label></div>
+                  <div class="export-card"><h3>Usar reclamación</h3><div class="export-buttons"><button class="btn btn-primary" id="copy-button" data-export type="button" disabled>Copiar texto</button><button class="btn btn-secondary" id="pdf-button" data-export type="button" disabled>Descargar PDF</button><button class="btn btn-secondary" id="text-button" data-export type="button" disabled>Descargar TXT</button><button class="btn btn-secondary" id="print-button" data-export type="button" disabled>Imprimir</button></div></div>
+                </aside>
+              </div>
+              <div class="notice"><strong>Importante:</strong> Reclama.ai ayuda a ordenar y redactar. No presta asesoramiento jurídico, no representa al usuario y no garantiza el resultado.</div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq"><div class="container"><div class="section-heading"><h2>Preguntas frecuentes</h2></div><div class="faq-list"><details><summary>¿Esto utiliza una IA externa?</summary><p>No en esta versión. El asistente detecta información y organiza el caso mediante lógica ejecutada en tu navegador. El contenido no se envía a un proveedor externo.</p></details><details><summary>¿Tengo que contestar todas las preguntas?</summary><p>No. Puedes saltarlas y completar después los campos que falten en el borrador.</p></details><details><summary>¿La reclamación tiene validez legal?</summary><p>Es un borrador orientativo. Su utilidad dependerá de que los datos sean correctos, se aporten pruebas y se presente por el canal adecuado.</p></details></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner container"><span>© 2026 Reclama.ai · Beta pública</span><div class="footer-links"><a href="/privacidad">Privacidad</a><a href="/aviso-legal">Aviso legal</a><a href="https://github.com/mlarbi84/Reclama.ai" rel="noreferrer">Código fuente</a></div></div></footer>
+  <div id="status-toast" class="status-toast" role="status" aria-live="polite"></div>
+  <pre id="print-output" aria-hidden="true"></pre>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

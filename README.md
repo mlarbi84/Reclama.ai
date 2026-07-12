@@ -1,26 +1,37 @@
 # Reclama.ai
 
-Aplicación web privada y guiada para ayudar a consumidores a preparar reclamaciones formales claras, editables y exportables.
+Asistente conversacional privado para convertir un relato cotidiano en una reclamación formal, editable y exportable.
 
 ## Estado
 
-MVP funcional listo para despliegue estático en Vercel. No requiere backend, base de datos, claves ni servicios externos.
+MVP funcional desplegable como sitio estático en Vercel. No requiere backend, base de datos, claves ni servicios externos.
+
+## Experiencia de usuario
+
+1. El usuario cuenta qué ha pasado con sus palabras.
+2. El navegador detecta categoría, empresa, fechas, importe, referencia, gestiones, pruebas y petición.
+3. El asistente hace como máximo tres preguntas, todas saltables.
+4. Se genera un borrador aunque falten datos, marcándolos entre corchetes.
+5. El usuario corrige los datos detectados, edita el documento y lo exporta.
 
 ## Funcionalidades
 
 - Landing responsive y accesible.
-- Formulario guiado en cinco pasos.
-- Categorías de telecomunicaciones, compras, viajes, banca/seguros, suministros y otros.
-- Validación de fechas, importes y campos mínimos.
-- Generación determinista del borrador en el navegador.
+- Entrada inicial mediante relato libre, sin selector de categoría.
+- Extracción local de información mediante reglas deterministas.
+- Preguntas dinámicas únicamente sobre empresa, fecha o solución cuando falten.
+- Generación temprana del borrador sin exigir datos personales.
+- Panel compacto para corregir los datos detectados.
 - Vista previa completamente editable.
-- Copia al portapapeles.
-- Descarga directa en PDF y TXT.
-- Impresión / guardado mediante el diálogo del navegador.
+- Copia al portapapeles, PDF, TXT e impresión.
 - Borrado inmediato del contenido y ausencia de persistencia.
 - Páginas de privacidad, aviso legal y error 404.
 - Cabeceras de seguridad para Vercel.
 - Pruebas automáticas y CI sin dependencias externas.
+
+## Qué significa “asistente inteligente” en esta versión
+
+No se utiliza un LLM externo. El análisis del relato se realiza mediante lógica local y transparente en el navegador. Esto permite validar la experiencia conversacional sin transmitir reclamaciones ni datos personales a terceros. Una futura integración con un modelo deberá ser opcional, consentida y diseñada con retención mínima.
 
 ## Ejecutar en local
 
@@ -48,21 +59,20 @@ Genera el sitio publicable en `dist/`.
 
 ## Desplegar en Vercel
 
-El repositorio incluye `vercel.json`. Al importarlo en Vercel:
+El repositorio incluye `vercel.json`:
 
 - Build command: `npm run build`
 - Output directory: `dist`
 - Node.js: 22 o superior
 
-Cada PR puede generar una preview y la rama `main` debe quedar asociada a producción.
-
 ## Arquitectura
 
 ```text
-index.html                 landing + flujo completo
+index.html                 landing + experiencia conversacional
 styles.css                 sistema visual y responsive
-js/app.js                  interacción y estado en memoria
-js/validation.js           validación y limpieza
+js/app.js                  conversación, preguntas y revisión
+js/extractor.js            extracción local desde lenguaje natural
+js/validation.js           limpieza y validación auxiliar
 js/claim.js                generación del documento
 js/pdf.js                  generación local del PDF
 tests/                     pruebas con node:test
@@ -72,7 +82,7 @@ docs/                      producto, MVP, legal y operación
 
 ## Privacidad
 
-El contenido de la reclamación no se transmite al servidor. No existe login, historial, analítica ni persistencia. El PDF se construye localmente.
+El relato y la reclamación no se transmiten al servidor. No existe login, historial, analítica ni persistencia. El PDF se construye localmente.
 
 ## Alcance legal
 
